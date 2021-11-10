@@ -3,18 +3,21 @@
 ## Темы и расписание
 
 11 ноября 2021. 18:40-19:50 Стандартный процесс анализа данных - теория. http://www.machinelearning.ru/wiki/index.php?title=Crisp-dm
-11 ноября 2021. 20:00-21:30 Python для анализа данных - самостоятельная работа студентов (в начале занятия я отключусь) 
-Курсы: 
-Начальный уровень:
-https://ru.coursera.org/learn/mathematics-and-python
-https://ru.coursera.org/learn/data-analysis-with-python-ru
-https://ru.coursera.org/learn/python-for-applied-data-science-ai-ru 
-Средний уровень:
-https://ru.coursera.org/learn/python-for-data-science
-https://ru.coursera.org/learn/data-collection-and-analysis-in-python
 
-Ссылка на форму: https://forms.gle/MK78DXicWkNQhRAF9
-Прошу заполнить 11 ноября до 22:00
+11 ноября 2021. 20:00-21:30 Python для анализа данных - самостоятельная работа студентов (в начале занятия я отключусь) 
+
+Курсы: 
+
+Начальный уровень:
+* https://ru.coursera.org/learn/mathematics-and-python
+* https://ru.coursera.org/learn/data-analysis-with-python-ru
+* https://ru.coursera.org/learn/python-for-applied-data-science-ai-ru 
+
+Средний уровень:
+* https://ru.coursera.org/learn/python-for-data-science
+* https://ru.coursera.org/learn/data-collection-and-analysis-in-python
+
+Ссылка на форму: https://forms.gle/MK78DXicWkNQhRAF9 (прошу заполнить 11 ноября до 22:00)
 
 12 ноября 2021. 15:20-17:00 Самостоятельная работа студентов (у меня параллельно другое занятие по расписанию)
 12 ноября 2021. 17:00-19:00 Классические алгоритмы машинного обучения. Примеры задач на анализ данных.
