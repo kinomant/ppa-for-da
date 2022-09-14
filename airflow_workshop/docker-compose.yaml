@@ -6,6 +6,6 @@ services:
     ports:
       - "3000:3000" #airflow - AirflowAdmin : airflow_pass
       - "3002:3002" 
-      - "15430:5432"
+      - "15432:5432"
     volumes:
       - "./src/dags:/lessons/dags"
