@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  project:
+    image: sindb/de-pg-cr-af:latest
+    ports:
+      - "3000:3000" #airflow - AirflowAdmin : airflow_pass
+      - "3002:3002" 
+      - "15430:5432"
+    volumes:
+      - "./src/dags:/lessons/dags"

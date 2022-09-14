@@ -1,0 +1,4 @@
+- Airflow
+	- `localhost:3000/airflow`
+- БД
+	- `jovyan:jovyan@localhost:15432/de`
