@@ -1,11 +1,50 @@
-version: "3.7"
+version: '2'
 
 services:
-  project:
+  zookeeper:
+    image: quay.io/debezium/zookeeper:1.9
+    ports:
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888
+
+  kafka:
+    image: quay.io/debezium/kafka:1.9
+    ports:
+      - 9092:9092
+    links:
+      - zookeeper
+    environment:
+      - ZOOKEEPER_CONNECT=zookeeper:2181
+      
+  de-pg-cr-af:
     image: sindb/de-pg-cr-af:latest
     ports:
-      - "3000:3000" #airflow - AirflowAdmin : airflow_pass
-      - "3002:3002" 
-      - "15432:5432"
+      - 3000:3000 #airflow - AirflowAdmin : airflow_pass
+      - 3002:3002
+      - 15432:5432
     volumes:
-      - "./src/dags:/lessons/dags"
+      - mydb:/var/lib/postgresql
+      - ${AIRFLOW_DAGS_DIR:-./dags}:/lessons/dags
+
+  metabase:
+    image: metabase/metabase
+    ports:
+      - 3333:3000
+
+  connect:
+    image: quay.io/debezium/connect:1.9
+    ports:
+      - 8083:8083
+    links:
+      - kafka
+      - de-pg-cr-af
+    environment:
+      - BOOTSTRAP_SERVERS=kafka:9092
+      - GROUP_ID=1
+      - CONFIG_STORAGE_TOPIC=my_connect_configs
+      - OFFSET_STORAGE_TOPIC=my_connect_offsets 
+      - STATUS_STORAGE_TOPIC=my_connect_statuses 
+
+volumes:
+  mydb:
