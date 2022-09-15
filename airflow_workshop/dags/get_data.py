@@ -9,7 +9,9 @@ from airflow.models import Variable
 
 # эти значения надо убрать в Variables
 url = "https://op.itmo.ru/auth/token/login"
-auth_data = {"username": "analytic", "password": "datatest"}
+username = Variable.get ("username")
+password = Variable.get ("password")
+auth_data = {"username": username, "password": password}
 
 token_txt = requests.post(url, auth_data).text
 token = json.loads(token_txt)["auth_token"]
