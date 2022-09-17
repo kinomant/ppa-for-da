@@ -1,3 +1,4 @@
 /errors
 /venv
-/dev
+/airflow_workshop/dev
+/airflow_workshop/venv
