@@ -17,6 +17,14 @@ https://op.itmo.ru/api/workprogram/detail/ + str(<'НАШ_ИД' дисципли
 Для дэшборда, можно делать визуалазицию ещё по одному измерению "структурные подразделения".
 
 <hr>
+Лучше использовать эндпойнт https://op.itmo.ru/api/record/structural/workprogram 
+
+
+<hr>
+
+Статус экспертизы теперь включен в энпойнт: https://op.itmo.ru/api/record/academic_plan/academic_wp_description/all
+
+
 Статус экспертизы:
 https://op.itmo.ru/api/workprogram/isu/ + str(<'DISC_DISC_ID' дисциплины>)
 
@@ -33,3 +41,7 @@ https://op.itmo.ru/api/workprogram/isu/ + str(<'DISC_DISC_ID' дисциплин
 <hr>
 Соответствие <'НАШ_ИД' дисциплины> и <'DISC_DISC_ID' дисциплины> можно также взять из эндпойнта 
 https://op.itmo.ru/api/record/academic_plan/academic_wp_description/all
+
+<hr>
+Справочник дисциплин
+https://op.itmo.ru/api/record/workprogram/veryshortwp
