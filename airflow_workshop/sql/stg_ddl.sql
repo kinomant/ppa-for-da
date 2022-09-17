@@ -5,5 +5,7 @@ create table stg.up_description
 faculty_id text, faculty_name text, training_period text, university_partner text, up_country text, lang text, military_department boolean, total_intensity text, 
 ognp_id text, ognp_name text, selection_year text);
 ALTER TABLE stg.up_description ADD CONSTRAINT up_description_uindex UNIQUE (id);
-create table stg.structural_units
-(fak_id integer, fak_title text, wp_id integer, wp_title text, wp_discipline_code varchar, editor_id integer, editor_username text, editor_first_name text, editor_last_name text, editor_email text, editor_isu_number integer);
+create table stg.su_wp
+(fak_id integer, fak_title text, wp_list text);
+-- create table stg.structural_units
+-- (fak_id integer, fak_title text, wp_id integer, wp_title text, wp_discipline_code varchar, editor_id integer, editor_username text, editor_first_name text, editor_last_name text, editor_email text, editor_isu_number integer);

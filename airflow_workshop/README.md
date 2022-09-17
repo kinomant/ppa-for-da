@@ -58,6 +58,12 @@ pip install -r requirements.txt
 - подключите Metabase к модели на слое cdm (при первом подключении нужно зарегистрироваться, хост:порт de-pg-cr-af:5432);
 - сформируйте дэшборд в соответствии с требованиями.
 
+## Эндпойнты
+
+- Структные подразделения: https://op.itmo.ru/api/record/structural/workprogram (см. dags/get_su.py)
+- Рабочие программы и статусы: https://op.itmo.ru/api/record/academic_plan/academic_wp_description/all (см. dag/get_wp_descriptions.py)
+- Учебные планы: https://disc.itmo.su/api/v1/academic_plans/' (аутентификация для эндпойнта по запросу, как альтернативу можно использовать данные из папки ./data) (см. dags/get_up_descriptions.py)
+
 
 ## Замечание по поводу проектирования слоёв
 Staging — первый слой в хранилище. Это значит, что данные из систем-источников сначала попадают именно в него. Основные функции staging-области:
