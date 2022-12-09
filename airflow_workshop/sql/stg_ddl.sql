@@ -6,4 +6,15 @@ faculty_id text, faculty_name text, training_period text, university_partner tex
 ognp_id text, ognp_name text, selection_year text);
 ALTER TABLE stg.up_description ADD CONSTRAINT up_description_uindex UNIQUE (id);
 create table stg.su_wp
-(fak_id integer, fak_title text, wp_list text);integer);
+(fak_id integer, fak_title text, wp_list text);
+create table stg.wp_markup
+(id integer, title text, discipline_code integer, prerequisites text, outcomes text);
+ALTER TABLE stg.wp_markup ADD CONSTRAINT wp_id_uindex UNIQUE (id);
+create table stg.online_courses
+(id integer, institution text, title text, topic_with_online_course text);
+create table stg.evaluation_tools
+(id integer, type text, "name" text, description text, check_point bool, deadline integer, semester integer, 
+"min" numeric, "max" numeric, descipline_sections text, evaluation_criteria text, wp_id integer);
+ALTER TABLE stg.evaluation_tools ADD CONSTRAINT et_id_uindex UNIQUE (id);
+create table stg.disc_by_year
+(id integer, ap_isu_id integer, title text, work_programs text);
