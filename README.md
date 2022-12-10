@@ -6,6 +6,10 @@
 
 10 декабря 2022. 11:40-13:10 Python для анализа данных. Библиотека pandas.
 
+Math Reminder https://drive.google.com/drive/folders/13riQMzd98q87wIjgUDX7Y-BywaAtunk-?usp=share_link
+
+Pandas https://drive.google.com/drive/folders/1xP5H0bEgEXfZq6vLpKmE5xn14Dhjdmju?usp=share_link 
+
 Курсы для самостоятельного изучения: 
 
 Начальный уровень:
