@@ -27,6 +27,8 @@ Pandas https://drive.google.com/drive/folders/1xP5H0bEgEXfZq6vLpKmE5xn14Dhjdmju?
 
 13 декабря 2022. 18:00-20:10 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
 
+Практика: https://drive.google.com/drive/folders/1FM5qRE7yGGTFYljMj4eYmww1xvE8PhrU?usp=sharing 
+
 16 декабря 2022. 18:40-20:10  Консультация по заданию 1. Самостоятельная работа студентов 
 ## Темы для задания
 1. Сбор данных 
