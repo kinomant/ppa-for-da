@@ -25,7 +25,7 @@ Pandas https://drive.google.com/drive/folders/1xP5H0bEgEXfZq6vLpKmE5xn14Dhjdmju?
 12 декабря 2022. 17:00-20:10 Классические алгоритмы машинного обучения. Примеры задач на анализ данных.
 Ссылка на colab: https://colab.research.google.com/drive/1sMZx6Pv7hSWY6L2xPPpmRGNCsqKEVa4f?usp=sharing
 
-13 декабря 2022. 17:00-20:10 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
+13 декабря 2022. 18:00-20:10 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
 
 16 декабря 2022. 18:40-20:10  Консультация по заданию 1. Самостоятельная работа студентов 
 ## Темы для задания
