@@ -60,6 +60,7 @@ pip install -r requirements.txt
 - распределение статусов по дисциплинам в моменте,
 - доля заполненных аннотаций в динамике,
 - долю дисциплин в статусе "одобрено" в динамике,
+
 В разрезах:
 - - ОП (с учетом года), 
 - - структурных подразделений для дисциплин, 
@@ -72,7 +73,7 @@ pip install -r requirements.txt
 - Структные подразделения: https://op.itmo.ru/api/record/structural/workprogram (см. dags/get_data.py)
 - Рабочие программы и статусы: https://op.itmo.ru/api/record/academic_plan/academic_wp_description/all (см. dag/get_data.py)
 - Учебные планы: https://disc.itmo.su/api/v1/academic_plans/' (аутентификация для эндпойнта по запросу, как альтернативу можно использовать данные из папки ./data) (см. dags/get_up_descriptions.py)
-- https://op.itmo.ru/api/record/academicplan/get_wp_by_year/ - дисциплины из уебрых планов по годам (см. dag/get_disc_by_year.py)
+- https://op.itmo.ru/api/record/academicplan/get_wp_by_year/ - дисциплины из учебных планов по годам (см. dag/get_disc_by_year.py)
 
 ## Замечание по поводу проектирования слоёв
 Staging — первый слой в хранилище. Это значит, что данные из систем-источников сначала попадают именно в него. Основные функции staging-области:
