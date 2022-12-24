@@ -39,8 +39,11 @@ def get_markup():
     # """)
     ids = PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').get_records(
     """
+    with t as (
     select distinct (dby.work_programs::json)->>'discipline_code' as discipline_code from stg.disc_by_year dby 
-    order by 1
+    order by 1)
+    select * from t
+    where discipline_code > '17075'
     """)
     url_down = 'https://op.itmo.ru/api/workprogram/items_isu/'
     for wp_id in ids:

@@ -6,7 +6,7 @@ create table cdm.up_wp_statuses
        up_id integer,
        state_name text,
        state_count integer,
-       annotated integer)
+       annotated integer);
 insert into cdm.up_wp_statuses
 (edu_program_name, selection_year, unit_title, level_name, up_id, state_name, state_count, annotated)
 with t as (

@@ -28,15 +28,16 @@ select id from t
 where isu_id in
 (
 select id from stg.up_description ud 
-where ((training_period = '2') and (selection_year > '2021'))
-   or ((training_period = '4') and (selection_year > '2019'))
-)
-and id > 7212
+where ((training_period = '2') and (selection_year > '2020'))
+   or ((training_period = '4') and (selection_year > '2018'))
+) and
+id > 7255
+order by id
     """)
     for up_id in ids:
         up_id = str(up_id[0])
         print (up_id)
-        url = 'https://op.itmo.ru/api/record/academicplan/get_wp_by_year/' + up_id + '?year=2023/2024'
+        url = 'https://op.itmo.ru/api/record/academicplan/get_wp_by_year/' + up_id + '?year=2022/2022'
         page = requests.get(url, headers=headers)
         df = pd.DataFrame.from_dict(page.json())
         df['work_programs'] = df[~df['work_programs'].isna()]["work_programs"].apply(lambda st_dict: json.dumps(st_dict))
