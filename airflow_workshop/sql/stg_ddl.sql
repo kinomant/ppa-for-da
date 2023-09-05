@@ -18,3 +18,9 @@ create table stg.evaluation_tools
 ALTER TABLE stg.evaluation_tools ADD CONSTRAINT et_id_uindex UNIQUE (id);
 create table stg.disc_by_year
 (id integer, ap_isu_id integer, title text, work_programs text);
+create table stg.up_detail
+(id integer, ap_isu_id integer, on_check varchar(20), laboriousness integer, academic_plan_in_field_of_study text);
+create table stg.up_isu
+(id integer, plan_type text, direction_id text, ns_id text, direction_code text, direction_name text, edu_program_id text, edu_program_name text, 
+faculty_id text, faculty_name text, training_period text, university_partner text, up_country text, lang text, military_department boolean, total_intensity text, 
+ognp_id text, ognp_name text, selection_year text, disciplines_blocks text);

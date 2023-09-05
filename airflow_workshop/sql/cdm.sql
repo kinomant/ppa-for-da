@@ -120,7 +120,7 @@ select u.id as up_id,
        we.editor_id,
        wm.prerequisites_cnt,
        wm.outcomes_cnt,
-       'op.itmo.ru/work-program/' || wu.wp_id::text as link
+       'op.itmo.ru/work-program/' ,, wu.wp_id::text as link
 from dds.up u
 left join dds.wp_up wu 
 on wu.up_id = u.id 
@@ -248,3 +248,55 @@ from t
 left join dds.units u2 
 on u2.id = t.up_unit
 
+
+create table cdm.disc_by_year
+(ap_isu_id text,
+       op_title text,
+       discipline_code text,
+       disc_title text,
+       description text,
+       su_title text,
+       prerequisites text,
+       discipline_sections text,
+       bibliographic_reference text,
+       outcomes text,
+       certification_evaluation_tools text,
+       state_name text
+       )
+insert into cdm.disc_by_year
+(ap_isu_id, op_title, discipline_code, disc_title, description, su_title, prerequisites, discipline_sections, bibliographic_reference, outcomes, certification_evaluation_tools, state_name)
+with t1 as (select ap_isu_id, title as op_title, work_programs ::json->>'id' as disc_id  from stg.disc_by_year dby),
+t2 as 
+(select id::text,
+       discipline_code, 
+       title as disc_title, 
+       description,  
+       structural_unit ::json->>'title' as su_title,
+       prerequisites,
+       discipline_sections,
+       bibliographic_reference,
+       outcomes,
+       certification_evaluation_tools,
+       case when expertise_status  ='AC' then 'одобрено' 
+                when expertise_status ='AR' then 'архив'
+                when expertise_status ='EX' then 'на экспертизе'
+                when expertise_status ='RE' then 'на доработке'
+                else 'в работе'
+        end as state_name
+from stg.wp_detail wd)
+select t1.ap_isu_id, 
+       t1.op_title,
+       t2.discipline_code,
+       t2.disc_title,
+       t2.description,
+       t2.su_title,
+       t2.prerequisites,
+       t2.discipline_sections,
+       t2.bibliographic_reference,
+       t2.outcomes,
+       t2.certification_evaluation_tools,
+       t2.state_name
+from t1
+join t2
+on t1.disc_id = t2.id
+order by 1

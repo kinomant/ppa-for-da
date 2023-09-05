@@ -17,12 +17,25 @@ token = json.loads(token_txt)["auth_token"]
 headers = {'Content-Type': "application/json", 'Authorization': "Token " + token}
 
 def get_markup():
+    ids = PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').get_records(
+    """
+    select distinct discipline_code from dds.wp_markup wm 
+    left join dds.wp_up wu 
+    on wu.wp_id = wm.id 
+    where (prerequisites = '[]' or outcomes = '[]') 
+    and  wu.up_id in 
+    (select id from dds.up u where u.selection_year > '2018')
+    and wm.id not in 
+    (select wp_id from dds.wp where wp_status = 4)
+    order by discipline_code desc
+    """)
     # ids = PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').get_records(
     # """
     # select distinct discipline_code from dds.wp_markup wm 
     # left join dds.wp_up wu 
     # on wu.wp_id = wm.id 
-    # where (prerequisites = '[]' or outcomes = '[]') and  wu.up_id in 
+    # where (prerequisites = '[]' or outcomes = '[]') 
+    # and  wu.up_id in 
     # (select id from dds.up u where u.selection_year = '2022')
     # and wm.id not in 
     # (select wp_id from dds.wp where wp_status = 4)
@@ -37,14 +50,13 @@ def get_markup():
     # where discipline_code > (select max(discipline_code)::text from stg.wp_markup)
     # order by 1
     # """)
-    ids = PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').get_records(
-    """
-    with t as (
-    select distinct (dby.work_programs::json)->>'discipline_code' as discipline_code from stg.disc_by_year dby 
-    order by 1)
-    select * from t
-    where discipline_code > '17075'
-    """)
+    # ids = PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').get_records(
+    # """
+    # with t as (
+    # select distinct (dby.work_programs::json)->>'discipline_code' as discipline_code from stg.disc_by_year dby 
+    # order by 1)
+    # select * from t
+    # """)
     url_down = 'https://op.itmo.ru/api/workprogram/items_isu/'
     for wp_id in ids:
         wp_id = str(wp_id[0])

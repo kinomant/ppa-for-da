@@ -77,7 +77,6 @@ def get_structural_units():
 #             df['topic_with_online_course'] = df[~df['topic_with_online_course'].isna()]["topic_with_online_course"].apply(lambda st_dict: json.dumps(st_dict))
 #             PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').insert_rows('stg.online_courses', df.values, target_fields = target_fields)
 
-
 with DAG(dag_id='get_data', start_date=pendulum.datetime(2022, 1, 1, tz="UTC"), schedule_interval='0 1 * * *', catchup=False) as dag:
     t1 = PythonOperator(
     task_id='get_wp_descriptions',
@@ -91,5 +90,6 @@ with DAG(dag_id='get_data', start_date=pendulum.datetime(2022, 1, 1, tz="UTC"), 
     # task_id='get_online_courses',
     # python_callable=get_online_courses
     # )
+
 
 t1 >> t2 
