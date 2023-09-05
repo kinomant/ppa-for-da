@@ -24,3 +24,5 @@ create table stg.up_isu
 (id integer, plan_type text, direction_id text, ns_id text, direction_code text, direction_name text, edu_program_id text, edu_program_name text, 
 faculty_id text, faculty_name text, training_period text, university_partner text, up_country text, lang text, military_department boolean, total_intensity text, 
 ognp_id text, ognp_name text, selection_year text, disciplines_blocks text);
+create table stg.wp_detail
+(id integer, discipline_code varchar(20), title text, description text, structural_unit varchar(100), prerequisites text, discipline_sections text, bibliographic_reference text, outcomes text, certification_evaluation_tools text, expertise_status varchar(3));

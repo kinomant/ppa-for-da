@@ -2,34 +2,29 @@
 
 ## Темы и расписание
 
-9 декабря 2022. 18:40-20:10 Стандартный процесс анализа данных - теория. http://www.machinelearning.ru/wiki/index.php?title=Crisp-dm
+2 сентября 2023. 17:00 Вводное занятие
 
-10 декабря 2022. 11:40-13:10 Python для анализа данных. Библиотека pandas.
+5 сентября 2023. 17:00 Стандартный процесс анализа данных - теория. http://www.machinelearning.ru/wiki/index.php?title=Crisp-dm
 
-Math Reminder https://drive.google.com/drive/folders/13riQMzd98q87wIjgUDX7Y-BywaAtunk-?usp=share_link
+* Mathematical Python - https://patrickwalls.github.io/mathematicalpython/ 
+* Math Reminder https://drive.google.com/drive/folders/13riQMzd98q87wIjgUDX7Y-BywaAtunk-?usp=share_link
+
+6 сентября 2023. 17:00 Python для анализа данных. Библиотека pandas.
 
 Pandas https://drive.google.com/drive/folders/1xP5H0bEgEXfZq6vLpKmE5xn14Dhjdmju?usp=share_link 
 
 Курсы для самостоятельного изучения: 
 
 Начальный уровень:
-* https://ru.coursera.org/learn/mathematics-and-python
-* https://ru.coursera.org/learn/data-analysis-with-python-ru
-* https://ru.coursera.org/learn/python-for-applied-data-science-ai-ru 
-
-Средний уровень:
-* https://ru.coursera.org/learn/python-for-data-science
-* https://ru.coursera.org/learn/data-collection-and-analysis-in-python
+* https://www.coursera.org/learn/data-analysis-with-python
+* https://www.kaggle.com/code/hamelg/python-for-data-analysis-index#Section-4:-Data-Exploration-and-Cleaning 
+* Python Data Science Handbook - https://jakevdp.github.io/PythonDataScienceHandbook/
 
 <hr>
-12 декабря 2022. 17:00-20:10 Классические алгоритмы машинного обучения. Примеры задач на анализ данных.
+8 сентября 2023. 17:00 Классические алгоритмы машинного обучения. Примеры задач на анализ данных.
 Ссылка на colab: https://colab.research.google.com/drive/1sMZx6Pv7hSWY6L2xPPpmRGNCsqKEVa4f?usp=sharing
 
-13 декабря 2022. 18:00-20:10 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
-
-Практика: https://drive.google.com/drive/folders/1FM5qRE7yGGTFYljMj4eYmww1xvE8PhrU?usp=sharing 
-
-16 декабря 2022. 18:40-20:10  Консультация по заданию 1. Самостоятельная работа студентов 
+9 сентября 2023. 17:00 Консультация по заданию 1. (подключаться не обязательно) 
 ## Темы для задания
 1. Сбор данных 
 2. Визуализация 
@@ -49,22 +44,23 @@ Pandas https://drive.google.com/drive/folders/1xP5H0bEgEXfZq6vLpKmE5xn14Dhjdmju?
 * Если есть публикация по темам, перечисленным выше, то нужно показать процесс анализа данных и применение прикладных пакетов в нём (не обязательно Python)
 * Если нет публикаций, то нужно сделать разбор чужой публикации. Для разбора можно брать только статьи, опубликованные в изданиях индексируемых международными наукометрическими базами
 
-17 декабря. 11:40-13:10 Консультация по заданию 1. Самостоятельная работа студентов. Подключение не обязательно.
+
+12 сентября 2023. 17:00 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
+
+Практика: https://drive.google.com/drive/folders/1FM5qRE7yGGTFYljMj4eYmww1xvE8PhrU?usp=sharing 
 
 <hr>
 Конвейер обработки данных
+13 сентября 2023. 17:00  - постановка задачи, описание эндпойнтов для сбора данных, проектирование хранилища и дэшборда
 
-19 декабря 2022. 17:00-20:10 - постановка задачи, описание эндпойнтов для сбора данных, проектирование хранилища и дэшборда
-
-20 декабря 2022. 17:00-20.10 - учтонение задачи 2, требования к дэшборду
+15 сентября 2023. 17:00 - учтонение задачи 2, требования к дэшборду
 https://github.com/kinomant/ppa-for-da/blob/master/airflow_workshop/README.md
 
-23 декабря 2022. 18:40-20.10 Консультация по заданию 2. Самостоятельная работа студентов. Подключение не обязательно.
-
-24 декабря 2022. 11:40-13:10 Защита выполненных работ. Самостоятельная работа студентов. Подключение не обязательно.
+16 сентября 2023. 17:00 Консультация по заданию 2. Самостоятельная работа студентов. Подключение не обязательно.
 
 <hr>
+19 сентября 2023. 17:00 Защита выполненных работ. Консультация. Экзамен
 
-26 декабря 2022, 17:00-20.10 Консультация. Защита выполненных работ. Зачет
+20 сентября 2023. 17:00 Защита выполненных работ. Консультация. Экзамен
 
-27 декабрь 2022. 18:40-20.10 Зачет
+23 сентября 2023. 17:00 Защита выполненных работ. Экзамен
