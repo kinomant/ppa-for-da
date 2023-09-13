@@ -25,7 +25,6 @@ def get_up_detail():
     """
     select id as op_id
     from stg.work_programs wp
-    order by 1
     """)
     url_down = 'https://op.itmo.ru/api/academicplan/detail/'
     target_fields = ['id', 'ap_isu_id', 'on_check', 'laboriousness', 'academic_plan_in_field_of_study']
@@ -98,7 +97,3 @@ with DAG(dag_id='get_up_detail', start_date=pendulum.datetime(2022, 1, 1, tz="UT
     )
 
 t1
-
-
-
-# https://op.itmo.ru/api/workprogram/detail/24669
