@@ -25,6 +25,7 @@ def get_up_detail():
     """
     select id as op_id
     from stg.work_programs wp
+    
     """)
     url_down = 'https://op.itmo.ru/api/academicplan/detail/'
     target_fields = ['id', 'ap_isu_id', 'on_check', 'laboriousness', 'academic_plan_in_field_of_study']
