@@ -76,27 +76,27 @@ def get_structural_units():
         df['work_programs'] = df[~df['work_programs'].isna()]["work_programs"].apply(lambda st_dict: json.dumps(st_dict))
         PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').insert_rows('stg.su_wp', df.values, target_fields = target_fields)
 
-# def get_online_courses():
-#     # нет учета времени, просто удаляем все записи
-#     PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').run(
-#     """
-#     truncate stg.online_courses  restart identity cascade;
-#     """)
-#     target_fields = ['id', 'title', 'institution', 'topic_with_online_course']
-#     url_down = 'https://op.itmo.ru/api/course/onlinecourse/?format=json&page=1'
-#     page = requests.get(url_down, headers=headers)
-#     c = json.loads(page.text)['count']
-#     for p in range(1,c//10+2):
-#         print (p)
-#         url_down = 'https://op.itmo.ru/api/course/onlinecourse/?format=json&page=' + str(p)
-#         page = requests.get(url_down, headers=headers)
-#         res = json.loads(page.text)['results']
-#         for r in res:
-#             df = pd.DataFrame([r], columns=r.keys())
-#             df = df[['id', 'title', 'institution', 'topic_with_online_course']]
-#             df['institution'] = df[~df['institution'].isna()]["institution"].apply(lambda st_dict: json.dumps(st_dict))
-#             df['topic_with_online_course'] = df[~df['topic_with_online_course'].isna()]["topic_with_online_course"].apply(lambda st_dict: json.dumps(st_dict))
-#             PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').insert_rows('stg.online_courses', df.values, target_fields = target_fields)
+def get_online_courses():
+    # нет учета времени, просто удаляем все записи
+    PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').run(
+    """
+    truncate stg.online_courses  restart identity cascade;
+    """)
+    target_fields = ['id', 'title', 'institution', 'topic_with_online_course']
+    url_down = 'https://op.itmo.ru/api/course/onlinecourse/?format=json&page=1'
+    page = requests.get(url_down, headers=headers)
+    c = json.loads(page.text)['count']
+    for p in range(1,c//10+2):
+        print (p)
+        url_down = 'https://op.itmo.ru/api/course/onlinecourse/?format=json&page=' + str(p)
+        page = requests.get(url_down, headers=headers)
+        res = json.loads(page.text)['results']
+        for r in res:
+            df = pd.DataFrame([r], columns=r.keys())
+            df = df[['id', 'title', 'institution', 'topic_with_online_course']]
+            df['institution'] = df[~df['institution'].isna()]["institution"].apply(lambda st_dict: json.dumps(st_dict))
+            df['topic_with_online_course'] = df[~df['topic_with_online_course'].isna()]["topic_with_online_course"].apply(lambda st_dict: json.dumps(st_dict))
+            PostgresHook(postgres_conn_id='PG_WAREHOUSE_CONNECTION').insert_rows('stg.online_courses', df.values, target_fields = target_fields)
 
 with DAG(dag_id='get_data', start_date=pendulum.datetime(2022, 1, 1, tz="UTC"), schedule_interval='0 1 * * *', catchup=False) as dag:
     t1 = PythonOperator(
@@ -111,5 +111,9 @@ with DAG(dag_id='get_data', start_date=pendulum.datetime(2022, 1, 1, tz="UTC"), 
     task_id='get_structural_units',
     python_callable=get_structural_units
     )
+    t4 = PythonOperator(
+    task_id='get_online_courses',
+    python_callable=get_online_courses
+    )
 
-t1 >> t2 >> t3
+t1 >> t2 >> t3 >> t4
