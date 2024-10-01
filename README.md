@@ -57,7 +57,12 @@ Math Reminder и Задание А1. https://drive.google.com/drive/folders/1b5Y
 
 1 октября 2024. 17:00 Нейросетевые алгоритмы для анализа данных. https://colab.research.google.com/drive/1nQ8bjQxiRIjhOecfcDE_q97HdIRLcf7t?usp=sharing#scrollTo=-vk8hn75sHWT 
 
-Практика: https://drive.google.com/drive/folders/1FM5qRE7yGGTFYljMj4eYmww1xvE8PhrU?usp=sharing 
+Transfer Learning - https://colab.research.google.com/drive/1k_qEB5eeljG1mL8JVNRHqNXTBXJqI1pT?usp=sharing 
+
+RNN - https://colab.research.google.com/drive/13nWY7BB3jWISRKfwvQmLVACg64ujZPpK?usp=sharing 
+
+LLM - https://colab.research.google.com/drive/1RDgCD41oAG2mh53Y0gJxwoXujZTP3Dhe?usp=sharing 
+
 
 3-4 октября 2024. 17:00. Защита работ A и 1.
 
